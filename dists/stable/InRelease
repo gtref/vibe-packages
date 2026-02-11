@@ -8,19 +8,37 @@ Codename: stable
 Architectures: amd64
 Components: main
 Description: Vibe Packages Stable Repository (AI Managed)
+Date: Wed, 11 Feb 2026 05:08:43 +0000
+MD5Sum:
+ a9f4c98b7372c2ebdea9ce0a680c8c71             1525 Release
+ d41d8cd98f00b204e9800998ecf8427e                0 main/binary-amd64/Packages
+ 66c5c80ac434af06193b5ffb880c8472               29 main/binary-amd64/Packages.gz
+SHA1:
+ efc608e03e8fe00eb1f411c37e5461b0545a1e5d             1525 Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-amd64/Packages
+ 1a050aa444b2a6266c0a6ad1bb1e8c4c0eb518d5               29 main/binary-amd64/Packages.gz
+SHA256:
+ ee523577297b9ae72199822ed2b40e85eb90cc8fd1a177391faf95208f9744f0             1525 Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-amd64/Packages
+ 4e18a92fbcb3531cd1780548a80bf593eca56e66a49a3ba95e0177329092d923               29 main/binary-amd64/Packages.gz
+SHA512:
+ 9ebfd6fbe9446dae9cfa87d42279b17501f5253ddc2a7e7f3d0f2cc6e4b64d85504b5df51e33e411cbca3f4591e0827fa7e9b71ed9b78c977017fad49e3a55a3             1525 Release
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-amd64/Packages
+ a0f7aeab88f11a0c039f9adfc8efbb448dec638bb8fac76cd41b4792ec09d3187e724cbe812ef126fb9669e4efd9e768e3263b3fa0eb0cba0d3e39d248dc1872               29 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEAVlBZNsjsztbHnMCT2ukqWd7F3QFAmmMBZMACgkQT2ukqWd7
-F3Tj5A//TmxDOC4WW+40B/LFBVhLYzhyTUnHA6l8l6LNJXYmuMrfxQPDaoL3TUH1
-z1Uvgv51nTA25318g4fEfqvoaXRUwP/qX1kJaGcoTlpdD5X2So8WzGDSb08mhjQP
-wXl/d/dBQ2bvod/EPzPYXUFw1jblDp4zoMkt0c3p/pLQ0XTjXwKnrHBDJU16TBGh
-hS/5dYZnpkeqBl4YO5lkHaspKf0YHFbv83EThXTSyzNn+1l5+vEozqWzhmZeTP1Q
-SnXW1a9RsbUJ5RJQE+JFjN/xAliJvZFhZU88GTj6IGANMwiH6FKUpkV7aEtz96sC
-J8ZuTevtnEj3zOUbPP36vA1EqDk7tdSX8/oUylETdn+lr4Hky57GInbiDQAqZKok
-TkyiKlQueenPoP/nsb+xJ9JMdD0GM7ZqvU9nYkQ6gNwe2dPkEQbxHwleCgR65BUr
-ctGSkgqZuXIfXOoT5Yv5XlvDFpd6ybmZjvg/epZ+Vm4tSKzs6nlVIQwprdAoklXC
-B/qY9og/AnZwnJQ/mXrhCF9ZxzhwdGOmt1+aLQ59aP6PwTHGuLzV/69IwYqJ9jNT
-PHrKwUCieAaf16iuljn3jlrAxfX6VnTfqJBn6WBuEB/siIaCpb7b2iNR0GejW/F1
-IbiAYF/jSVDoIOjblFGvIM+q7ZZLrtkPA9bIq6cdXLJ8Ec65OLk=
-=pIi4
+iQJFBAEBCgAvFiEE/FhibHyoZHRDFlcQAwLQlUZODvEFAmmMDtsRHGFpQHZpYmUu
+cGFja2FnZXMACgkQAwLQlUZODvENSQ/+ImruqHS3N+62LAnQCOJa/AqBpez1maw0
+smjbCk63KRjl/MOwtaGOodi+X6yt81AI9nUNhUslYOoDmJMX2SJ1ABfCfHuTg1e5
+7cTTR7AgXnndey3QoO7OaPB3UXHukoLrmxEaCclNJwxqHqxI/q9vIKfJQHJBLH0W
+ZcUkKrg7mcwcD9A8EgLirsklnhxP0l/rZnPX4yX21cR3NJAinwQQdQ9CoUN3M4+P
+OIn8+ASgRgU9NwLzxTkD+KzUhSK/kpHe1frhTZb7dsqfGMXJbTyLfIa1UeqPDS59
+/SzACI+1NWzmXgkFAU+VM19ha0E3kbIwmEW4LwgsENZQCUMAfzxQyBRYfow2DfcD
+bv/1QZAhE4udl1y+dxi+xYnVQMWWdgt+7cSwvAtuanZPYMr5vtmPbb5n0do50yOK
+tt85U1xoNKZgMxMvEwT4UIXMGAJ651N4hBBDygLwY5wv0P79IXnW0H3dMqcxBg1A
+B61u118Wr/hfV3u3mtHAeacyHyf8GPOOHnI6gTOEhZ9x38sL609bkESDpKye0gVs
+jX+PNH3WmokDqahNAoslluSEH9GisfWm3fUnZ+cQofv5a/cn2voU37qJW53yo1Oy
+yG6jhxcUqV0cDdjaev2qidPHeRFmj3kDQCQOR+dF+XBYaxhai1Y6TBt6CkmDsvP0
+gxo1q8/oYq8=
+=0ajh
 -----END PGP SIGNATURE-----

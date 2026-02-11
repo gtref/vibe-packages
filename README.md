@@ -17,4 +17,6 @@ curl -sS https://<user>.github.io/vibe-packages/public.key | sudo apt-key add -
 (Replace `<user>` with the actual username)
 
 ## Log
-Progress and changes are tracked in [.Jules/log[1].md](.Jules/log%5B1%5D.md).
+Progress and changes are tracked in the `.ai/` directory.
+- Current Log: [.ai/log[2].md](.ai/log[2].md)
+- Previous Logs: [.Jules/log[1].md](.Jules/log[1].md)
