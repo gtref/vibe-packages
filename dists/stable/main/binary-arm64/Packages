@@ -1,0 +1,12 @@
+Package: vibe-sample
+Version: 1.0.0
+Architecture: all
+Maintainer: Vibe Packages AI
+Filename: pool/main/vibe-sample_1.0.0_all.deb
+Size: 580
+MD5sum: 181b0679009afc8c6389a1c5d4b4a844
+SHA1: 1f2e788a6556d3b7373253dbca7e9605c35b3a54
+SHA256: 0603a233a4e5e91c243f8e80c2dabf575a962a1bc0d81ceb8c9c62217686cfff
+Section: misc
+Priority: optional
+Description: A sample package for the vibe-packages repository.

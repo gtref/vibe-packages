@@ -12,7 +12,14 @@ Welcome to **vibe packages**, a repository for various software packages managed
 ## Security
 To use these packages, you must import our GPG public key:
 ```bash
-curl -sS https://gtref.github.io/vibe-packages/public.key | sudo apt-key add -
+sudo mkdir -p /etc/apt/keyrings
+curl -sS https://gtref.github.io/vibe-packages/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/vibe-packages.gpg
+```
+
+## Adding the Repository
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/vibe-packages.gpg] https://gtref.github.io/vibe-packages stable main" | sudo tee /etc/apt/sources.list.d/vibe-packages.list
+sudo apt update
 ```
 
 ## List Packages
