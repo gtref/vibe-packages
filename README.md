@@ -16,6 +16,16 @@ curl -sS https://<user>.github.io/vibe-packages/public.key | sudo apt-key add -
 ```
 (Replace `<user>` with the actual username)
 
+## List Packages
+You can list the available packages using `curl`:
+```bash
+# For Stable amd64
+curl -s https://<user>.github.io/vibe-packages/dists/stable/main/binary-amd64/Packages | grep Package:
+
+# For Stable arm64
+curl -s https://<user>.github.io/vibe-packages/dists/stable/main/binary-arm64/Packages | grep Package:
+```
+
 ## Log
 Progress and changes are tracked in the `.ai/` directory.
 - Current Log: [.ai/log[2].md](.ai/log[2].md)
