@@ -1,0 +1,7 @@
+Origin: Vibe Packages
+Label: Vibe Packages Stable
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Vibe Packages Stable Repository (AI Managed)
