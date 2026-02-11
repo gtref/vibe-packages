@@ -27,5 +27,5 @@ curl -s https://gtref.github.io/vibe-packages/dists/stable/main/binary-arm64/Pac
 
 ## Log
 Progress and changes are tracked in the `.ai/` directory.
-- Current Log: [.ai/log[2].md](.ai/log[2].md)
-- Previous Logs: [.Jules/log[1].md](.Jules/log[1].md)
+- Current Log: [.ai/log[3].md](.ai/log[3].md)
+- Previous Logs: [.ai/log[2].md](.ai/log[2].md), [.Jules/log[1].md](.Jules/log[1].md)
