@@ -3,7 +3,7 @@ import subprocess
 import argparse
 
 GPG_KEY_NAME = "Vibe Packages AI"
-ARCHS = ["amd64", "arm64", "armhf"]
+ARCHS = ["amd64", "arm64", "armhf", "arm", "i386", "all"]
 
 def run_command(command, cwd=None):
     print(f"Running: {command}")
