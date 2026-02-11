@@ -15,3 +15,7 @@
 - Updated `scripts/manage_repo.py` to handle multi-architecture metadata generation.
 - Added documentation for listing packages using `curl` in `README.md` and `index.html`.
 - Implemented automatic `index.html` generation for all repository directories to improve navigation and prevent 404 errors on GitHub Pages.
+- Added `i386` architecture support.
+- Improved `index.html` generation with better styling and consistency across all directories.
+- Fixed `Release` file generation to prevent the file from including itself in checksums.
+- Added `arm` architecture support to resolve issues with some Termux environments.

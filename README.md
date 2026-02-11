@@ -24,6 +24,9 @@ curl -s https://<user>.github.io/vibe-packages/dists/stable/main/binary-amd64/Pa
 
 # For Stable arm64
 curl -s https://<user>.github.io/vibe-packages/dists/stable/main/binary-arm64/Packages | grep Package:
+
+# For Stable arm (32-bit)
+curl -s https://<user>.github.io/vibe-packages/dists/stable/main/binary-arm/Packages | grep Package:
 ```
 
 ## Log

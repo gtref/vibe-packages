@@ -3,7 +3,7 @@ import subprocess
 import argparse
 
 GPG_KEY_NAME = "Vibe Packages AI"
-ARCHS = ["amd64", "arm64", "armhf"]
+ARCHS = ["amd64", "arm64", "armhf", "arm", "i386"]
 
 def run_command(command, cwd=None):
     print(f"Running: {command}")
@@ -16,13 +16,54 @@ def run_command(command, cwd=None):
 def generate_index(path):
     print(f"Generating index.html for {path}")
     items = sorted(os.listdir(path))
-    html_content = f"<html><head><title>Index of {path}</title></head><body><h1>Index of {path}</h1><ul>"
-    html_content += '<li><a href="../">Parent Directory</a></li>'
+
+    style = """
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f4f4f9;
+        }
+        header {
+            border-bottom: 2px solid #007bff;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        h1 { margin: 0; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 0.5rem; background: #fff; padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid #ddd; }
+        a { text-decoration: none; color: #007bff; font-weight: bold; }
+        a:hover { color: #0056b3; }
+    </style>
+    """
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index of {path}</title>
+    {style}
+</head>
+<body>
+    <header>
+        <h1>Index of {path}</h1>
+    </header>
+    <ul>
+        <li><a href="../">.. (Parent Directory)</a></li>
+"""
     for item in items:
         if item == "index.html": continue
         suffix = "/" if os.path.isdir(os.path.join(path, item)) else ""
-        html_content += f'<li><a href="{item}{suffix}">{item}{suffix}</a></li>'
-    html_content += "</ul></body></html>"
+        html_content += f'        <li><a href="{item}{suffix}">{item}{suffix}</a></li>\n'
+
+    html_content += """    </ul>
+</body>
+</html>
+"""
     with open(os.path.join(path, "index.html"), "w") as f:
         f.write(html_content)
 
@@ -40,7 +81,6 @@ def update_repo(dist):
     main_dir = f"{dist_dir}/main"
     if not os.path.exists(main_dir):
         os.makedirs(main_dir)
-    generate_index(main_dir)
 
     for arch in ARCHS:
         binary_dir = f"{main_dir}/binary-{arch}"
@@ -51,6 +91,8 @@ def update_repo(dist):
         success, output = run_command(f"dpkg-scanpackages --arch {arch} pool/main > {binary_dir}/Packages")
         run_command(f"gzip -fk {binary_dir}/Packages")
         generate_index(binary_dir)
+
+    generate_index(main_dir)
 
     # Generate Release file
     arch_str = " ".join(ARCHS)
@@ -66,6 +108,11 @@ Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
     temp_release = f"{dist_dir}/Release.new"
     with open(temp_release, "w") as f:
         f.write(release_header)
+
+    # Remove old Release file to avoid it being included in its own checksums
+    old_release = f"{dist_dir}/Release"
+    if os.path.exists(old_release):
+        os.remove(old_release)
 
     # Append file hashes using apt-ftparchive release
     success, output = run_command(f"apt-ftparchive release {dist_dir} >> {temp_release}")
