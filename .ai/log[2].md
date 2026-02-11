@@ -11,3 +11,6 @@
 - Updated `README.md` and `index.html` to point to the new log location.
 - Moved repository management tool to `scripts/manage_repo.py` to be included in the repository.
 - Added `.gitkeep` to `pool/main` to ensure directory tracking.
+- Added support for `arm64` and `armhf` architectures.
+- Updated `scripts/manage_repo.py` to handle multi-architecture metadata generation.
+- Added documentation for listing packages using `curl` in `README.md` and `index.html`.

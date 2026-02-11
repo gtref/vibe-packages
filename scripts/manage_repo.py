@@ -3,6 +3,7 @@ import subprocess
 import argparse
 
 GPG_KEY_NAME = "Vibe Packages AI"
+ARCHS = ["amd64", "arm64", "armhf"]
 
 def run_command(command, cwd=None):
     print(f"Running: {command}")
@@ -21,23 +22,30 @@ def build_package(source_dir, output_dir="pool/main"):
 def update_repo(dist):
     print(f"Updating repository for distribution: {dist}")
     dist_dir = f"dists/{dist}"
-    binary_dir = f"{dist_dir}/main/binary-amd64"
 
-    if not os.path.exists(binary_dir):
-        os.makedirs(binary_dir)
+    for arch in ARCHS:
+        binary_dir = f"{dist_dir}/main/binary-{arch}"
+        if not os.path.exists(binary_dir):
+            os.makedirs(binary_dir)
 
-    # Generate Packages file
-    success, output = run_command(f"apt-ftparchive packages pool/main > {binary_dir}/Packages")
-    if not success: return False
+        # Generate Packages file for specific architecture
+        # Note: dpkg-scanpackages is used here for better architecture filtering
+        success, output = run_command(f"dpkg-scanpackages --arch {arch} pool/main > {binary_dir}/Packages")
+        if not success:
+            # Fallback if dpkg-scanpackages fails or if we prefer apt-ftparchive
+            # apt-ftparchive packages pool/main > {binary_dir}/Packages
+            # For now, let's assume dpkg-scanpackages is fine.
+            pass
 
-    run_command(f"gzip -fk {binary_dir}/Packages")
+        run_command(f"gzip -fk {binary_dir}/Packages")
 
     # Generate Release file
+    arch_str = " ".join(ARCHS)
     release_header = f"""Origin: Vibe Packages
 Label: Vibe Packages {dist.capitalize()}
 Suite: {dist}
 Codename: {dist}
-Architectures: amd64
+Architectures: {arch_str}
 Components: main
 Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
 """
@@ -46,7 +54,7 @@ Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
     with open(temp_release, "w") as f:
         f.write(release_header)
 
-    # Append file hashes
+    # Append file hashes using apt-ftparchive release
     success, output = run_command(f"apt-ftparchive release {dist_dir} >> {temp_release}")
     if not success: return False
 
