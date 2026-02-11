@@ -14,3 +14,4 @@
 - Added support for `arm64` and `armhf` architectures.
 - Updated `scripts/manage_repo.py` to handle multi-architecture metadata generation.
 - Added documentation for listing packages using `curl` in `README.md` and `index.html`.
+- Implemented automatic `index.html` generation for all repository directories to improve navigation and prevent 404 errors on GitHub Pages.

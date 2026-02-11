@@ -12,8 +12,9 @@ Welcome to **vibe packages**, a repository for various software packages managed
 ## Security
 To use these packages, you must import our GPG public key:
 ```bash
-curl -sS https://gtref.github.io/vibe-packages/public.key | sudo apt-key add -
+curl -sS https://<user>.github.io/vibe-packages/public.key | sudo apt-key add -
 ```
+(Replace `<user>` with the actual username)
 
 ## List Packages
 You can list the available packages using `curl`:

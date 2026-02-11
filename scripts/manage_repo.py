@@ -13,9 +13,23 @@ def run_command(command, cwd=None):
         return False, result.stderr
     return True, result.stdout
 
+def generate_index(path):
+    print(f"Generating index.html for {path}")
+    items = sorted(os.listdir(path))
+    html_content = f"<html><head><title>Index of {path}</title></head><body><h1>Index of {path}</h1><ul>"
+    html_content += '<li><a href="../">Parent Directory</a></li>'
+    for item in items:
+        if item == "index.html": continue
+        suffix = "/" if os.path.isdir(os.path.join(path, item)) else ""
+        html_content += f'<li><a href="{item}{suffix}">{item}{suffix}</a></li>'
+    html_content += "</ul></body></html>"
+    with open(os.path.join(path, "index.html"), "w") as f:
+        f.write(html_content)
+
 def build_package(source_dir, output_dir="pool/main"):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+        generate_index(output_dir)
     success, output = run_command(f"dpkg-deb --build {source_dir} {output_dir}")
     return success
 
@@ -23,21 +37,20 @@ def update_repo(dist):
     print(f"Updating repository for distribution: {dist}")
     dist_dir = f"dists/{dist}"
 
+    main_dir = f"{dist_dir}/main"
+    if not os.path.exists(main_dir):
+        os.makedirs(main_dir)
+    generate_index(main_dir)
+
     for arch in ARCHS:
-        binary_dir = f"{dist_dir}/main/binary-{arch}"
+        binary_dir = f"{main_dir}/binary-{arch}"
         if not os.path.exists(binary_dir):
             os.makedirs(binary_dir)
 
         # Generate Packages file for specific architecture
-        # Note: dpkg-scanpackages is used here for better architecture filtering
         success, output = run_command(f"dpkg-scanpackages --arch {arch} pool/main > {binary_dir}/Packages")
-        if not success:
-            # Fallback if dpkg-scanpackages fails or if we prefer apt-ftparchive
-            # apt-ftparchive packages pool/main > {binary_dir}/Packages
-            # For now, let's assume dpkg-scanpackages is fine.
-            pass
-
         run_command(f"gzip -fk {binary_dir}/Packages")
+        generate_index(binary_dir)
 
     # Generate Release file
     arch_str = " ".join(ARCHS)
@@ -64,6 +77,8 @@ Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
     # Sign Release file
     run_command(f"gpg --batch --yes --clearsign --local-user '{GPG_KEY_NAME}' --output {dist_dir}/InRelease {dist_dir}/Release")
     run_command(f"gpg --batch --yes --detach-sign --armor --local-user '{GPG_KEY_NAME}' --output {dist_dir}/Release.gpg {dist_dir}/Release")
+
+    generate_index(dist_dir)
 
     return True
 
