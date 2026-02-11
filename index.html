@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vibe packages</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f4f4f9;
+        }
+        header {
+            border-bottom: 2px solid #007bff;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+        h1 { margin: 0; }
+        .repo-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .repo-link {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .repo-link:hover {
+            background: #0056b3;
+        }
+        code {
+            background: #e9ecef;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        pre {
+            background: #212529;
+            color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>vibe packages</h1>
+    </header>
+
+    <div class="warning">
+        <strong>WARNING:</strong> This is an AI generated and maintained package repository. Use at your own risk.
+    </div>
+
+    <p>Welcome to <strong>vibe packages</strong>, a repository for various software packages managed by AI.</p>
+
+    <h2>Repository Branches</h2>
+    <div class="repo-links">
+        <a href="dists/stable/" class="repo-link">Stable Branch</a>
+        <a href="dists/dev/" class="repo-link">Dev Branch</a>
+    </div>
+
+    <h2>How to use</h2>
+    <p>1. Import the GPG key:</p>
+    <pre>curl -sS https://&lt;user&gt;.github.io/vibe-packages/public.key | sudo apt-key add -</pre>
+
+    <p>2. Add the repository to your sources:</p>
+    <pre>echo "deb https://&lt;user&gt;.github.io/vibe-packages stable main" | sudo tee /etc/apt/sources.list.d/vibe-packages.list</pre>
+
+    <p>3. Update and install:</p>
+    <pre>sudo apt update</pre>
+
+    <h2>Links</h2>
+    <ul>
+        <li><a href="public.key">GPG Public Key</a></li>
+        <li><a href="https://github.com/&lt;user&gt;/vibe-packages">GitHub Repository</a></li>
+        <li><a href=".Jules/log[1].md">Progress Log</a></li>
+    </ul>
+</body>
+</html>
