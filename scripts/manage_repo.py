@@ -65,7 +65,38 @@ Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
     run_command(f"gpg --batch --yes --clearsign --local-user '{GPG_KEY_NAME}' --output {dist_dir}/InRelease {dist_dir}/Release")
     run_command(f"gpg --batch --yes --detach-sign --armor --local-user '{GPG_KEY_NAME}' --output {dist_dir}/Release.gpg {dist_dir}/Release")
 
+    # Generate index.html for browsable directory
+    generate_index_html(dist_dir, dist)
+
     return True
+
+def generate_index_html(path, title):
+    files = os.listdir(path)
+    files.sort()
+    links = []
+    for f in files:
+        if f == "index.html": continue
+        links.append(f'<li><a href="{f}">{f}</a></li>')
+
+    html = f"""<!DOCTYPE html>
+<html>
+<head><title>Index of {title}</title></head>
+<body>
+<h1>Index of {title}</h1>
+<ul>
+    <li><a href="../">../</a></li>
+    {" ".join(links)}
+</ul>
+</body>
+</html>"""
+    with open(os.path.join(path, "index.html"), "w") as f:
+        f.write(html)
+
+    # Recursively generate for subdirectories
+    for f in files:
+        full_path = os.path.join(path, f)
+        if os.path.isdir(full_path):
+            generate_index_html(full_path, f)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Manage Debian Repository")

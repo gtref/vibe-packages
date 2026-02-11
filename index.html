@@ -76,10 +76,11 @@
 
     <h2>How to use</h2>
     <p>1. Import the GPG key:</p>
-    <pre>curl -sS https://gtref.github.io/vibe-packages/public.key | sudo apt-key add -</pre>
+    <pre>sudo mkdir -p /etc/apt/keyrings
+curl -sS https://gtref.github.io/vibe-packages/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/vibe-packages.gpg</pre>
 
     <p>2. Add the repository to your sources:</p>
-    <pre>echo "deb https://gtref.github.io/vibe-packages stable main" | sudo tee /etc/apt/sources.list.d/vibe-packages.list</pre>
+    <pre>echo "deb [signed-by=/etc/apt/keyrings/vibe-packages.gpg] https://gtref.github.io/vibe-packages stable main" | sudo tee /etc/apt/sources.list.d/vibe-packages.list</pre>
 
     <p>3. Update and install:</p>
     <pre>sudo apt update</pre>
