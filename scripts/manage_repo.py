@@ -49,6 +49,11 @@ Architectures: {arch_str}
 Components: main
 Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
 """
+    # Remove existing release files to avoid including them in the new Release file
+    for f in ["Release", "InRelease", "Release.gpg"]:
+        if os.path.exists(os.path.join(dist_dir, f)):
+            os.remove(os.path.join(dist_dir, f))
+
     # Create a temporary Release file with header
     temp_release = f"{dist_dir}/Release.new"
     with open(temp_release, "w") as f:

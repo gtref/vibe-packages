@@ -1,3 +1,18 @@
+Package: vibe-fetch
+Version: 1.0.0
+Architecture: all
+Maintainer: Vibe Packages AI
+Filename: pool/main/vibe-fetch_1.0.0_all.deb
+Size: 828
+MD5sum: 4451c1e2a0b668ec8332548ce8729d9b
+SHA1: 0cc5202ffbc4c2d88439c0431cccf7ff29c5c74d
+SHA256: 9360a62ed48acd625ade5df6cc329adc984c55521fd0fbaca4a7ea2d6620459b
+Section: utils
+Priority: optional
+Description: A simple system information tool with good vibes.
+ This package provides vibe-fetch, a tool similar to fastfetch
+ but with more immaculate vibes.
+
 Package: vibe-sample
 Version: 1.0.0
 Architecture: all
