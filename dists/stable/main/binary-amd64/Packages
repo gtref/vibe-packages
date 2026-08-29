@@ -1,3 +1,19 @@
+Package: fsutilsx
+Version: 1.0.0
+Architecture: amd64
+Maintainer: Ronan <ronan.nugget@gmail.com>
+Filename: pool/main/fsutilsx_1.0.0_amd64.deb
+Size: 5908
+MD5sum: 160526e5f46587e236915edc99bb2484
+SHA1: 7ed77300f122ec6eb299e1e670722c5c8c14f8fe
+SHA256: fc694476a238a2c379c3cfd32f8385c64a2ec424bd3db569ef24f10dc56cb8a0
+Section: utils
+Priority: optional
+Description: Minimal filesystem utilities implemented using raw Linux syscalls
+ This package provides lsx, a lightweight directory listing tool.
+ Additional utilities such as mkdirx, rmx, rmdirx, touchx, mvx, cpx,
+ statx, and pwdx will be added in future versions.
+
 Package: huncolor-vibe
 Version: 1.1.0
 Architecture: amd64
