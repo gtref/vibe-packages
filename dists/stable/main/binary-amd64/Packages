@@ -1,3 +1,14 @@
+Package: huncolor-vibe
+Version: 1.0.0
+Architecture: amd64
+Maintainer: GTREF <ronan.nugget@gmail.com>
+Filename: pool/main/huncolor-vibe_1.0.0_amd64.deb
+Size: 4530
+MD5sum: d6d4d8ee457d7e0e75d0dae5e667927d
+SHA1: 7bea3d8ca72f64309b83546a96aa3c0dc9b5b9fc
+SHA256: 4583b77aa02af2e98e80df28dab5586ba7d564d99423594cfb210ff2cea7be6b
+Description: Terminal hilighting when you need it most.
+
 Package: vibe-fetch
 Version: 1.0.0
 Architecture: all
@@ -25,3 +36,4 @@ SHA256: 0603a233a4e5e91c243f8e80c2dabf575a962a1bc0d81ceb8c9c62217686cfff
 Section: misc
 Priority: optional
 Description: A sample package for the vibe-packages repository.
+

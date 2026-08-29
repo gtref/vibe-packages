@@ -25,3 +25,4 @@ SHA256: 0603a233a4e5e91c243f8e80c2dabf575a962a1bc0d81ceb8c9c62217686cfff
 Section: misc
 Priority: optional
 Description: A sample package for the vibe-packages repository.
+
