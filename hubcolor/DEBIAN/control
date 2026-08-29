@@ -1,5 +1,5 @@
 Package: huncolor-vibe
-Version: 1.0.0
+Version: 1.1.0
 Architecture: amd64
 Maintainer: GTREF <ronan.nugget@gmail.com>
 Description: Terminal hilighting when you need it most.
