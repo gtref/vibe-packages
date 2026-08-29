@@ -14,10 +14,10 @@ Version: 1.0.0
 Architecture: amd64
 Maintainer: Ronan <ronan.nugget@gmail.com>
 Filename: pool/main/unamex_1.0.0_amd64.deb
-Size: 3546
-MD5sum: b6af8caaed5b67d2f4d02e05072b1cc5
-SHA1: cd8d45c6a13bf6650baf0a5f9ce99a2ea208ffaa
-SHA256: 466fe17bc5de0ebfb954c58d1055fed591c2aca42772e68880af8052bbaa0a5f
+Size: 3548
+MD5sum: 8623e9d57fde72523e83fb03496baf80
+SHA1: ebec3121be44675ae245d2ec28b8f3bfa1d485ab
+SHA256: e678432cd6d9ae3ee10467b62d68a6a381276772dd70352fbfa566c6533135f0
 Section: utils
 Priority: optional
 Description: Custom uname clone
