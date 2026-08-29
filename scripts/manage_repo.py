@@ -86,13 +86,16 @@ def generate_index_html(path, title):
         if f == "index.html": continue
         links.append(f'<li><a href="{f}">{f}</a></li>')
 
+    # If path is direct child of dists/ (e.g. dists/stable), parent link is ../../ to reach root
+    parent_link = "../../" if os.path.dirname(os.path.normpath(path)) == "dists" else "../"
+
     html = f"""<!DOCTYPE html>
 <html>
 <head><title>Index of {title}</title></head>
 <body>
 <h1>Index of {title}</h1>
 <ul>
-    <li><a href="../">../</a></li>
+    <li><a href="{parent_link}">../</a></li>
     {" ".join(links)}
 </ul>
 </body>
