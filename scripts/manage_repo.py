@@ -70,6 +70,9 @@ Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
     run_command(f"gpg --batch --yes --clearsign --local-user '{GPG_KEY_NAME}' --output {dist_dir}/InRelease {dist_dir}/Release")
     run_command(f"gpg --batch --yes --detach-sign --armor --local-user '{GPG_KEY_NAME}' --output {dist_dir}/Release.gpg {dist_dir}/Release")
 
+    # Export public key to public.key at repo root to ensure public key is always in sync
+    run_command(f"gpg --armor --export '{GPG_KEY_NAME}' > public.key")
+
     # Generate index.html for browsable directory
     generate_index_html(dist_dir, dist)
 
