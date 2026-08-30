@@ -40,6 +40,21 @@ Expire-Date: 0
 def build_package(source_dir, output_dir="pool/main"):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+
+    # Automatically set executable permissions (+x) on files in binary directories
+    bin_subdirs = ["bin", "sbin", "usr/bin", "usr/sbin", "usr/local/bin", "usr/local/sbin", "usr/libexec"]
+    for subdir in bin_subdirs:
+        bin_dir = os.path.join(source_dir, subdir)
+        if os.path.isdir(bin_dir):
+            for root, dirs, files in os.walk(bin_dir):
+                for f in files:
+                    file_path = os.path.join(root, f)
+                    try:
+                        st = os.stat(file_path)
+                        os.chmod(file_path, st.st_mode | 0o111)
+                    except Exception as e:
+                        print(f"Warning: Could not set executable permission on {file_path}: {e}")
+
     success, output = run_command(f"dpkg-deb --build {source_dir} {output_dir}")
     return success
 
