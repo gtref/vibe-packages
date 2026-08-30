@@ -3,10 +3,10 @@ Version: 1.1.0
 Architecture: amd64
 Maintainer: Ronan <ronan.nugget@gmail.com>
 Filename: pool/main/fsutilsx_1.1.0_amd64.deb
-Size: 6376
-MD5sum: ec1270d458c197d953d59671a85a8a05
-SHA1: 27da00043b0f9c25d2561c15a856b947842fb9cc
-SHA256: 92f3b3f52ece2c319fd2ceecc088039796ddf4d3d7c40fc41aceb236cb6c8dbe
+Size: 7232
+MD5sum: fc37ef7845166bbff3ffa908b9bda618
+SHA1: 61228ee30606b4d676277cf5a8421ae71d40fc54
+SHA256: c2f82b5ad7673923d6a0a6c24116fb0082d3da7463f18147fc5c185cdd648083
 Section: utils
 Priority: optional
 Description: Minimal filesystem utilities implemented using raw Linux syscalls
@@ -79,3 +79,4 @@ SHA1: acdd3b481a7524bbffb387594731631d8cfb8ba9
 SHA256: 5d42c0c0a8609273663259477ccea8306b19f22be2a6af24f83c6dce508dbc07
 Description: A simple command line tool that displays current time with immaculate vibes.
  vibetime shows local time, UTC time, Unix epoch timestamp, and a positive vibe message.
+
