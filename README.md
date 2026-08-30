@@ -55,6 +55,10 @@ To add a new Debian package (`.deb`) to the repository:
    ```
 
 2. **Build the `.deb` Package**:
+   Ensure executable files (e.g. scripts or binaries under `usr/bin/`) have execute permissions before building:
+   ```bash
+   chmod +x my-package/usr/bin/*
+   ```
    Run the repository build helper to compile the Debian package into `pool/main/`:
    ```bash
    python3 scripts/manage_repo.py build my-package

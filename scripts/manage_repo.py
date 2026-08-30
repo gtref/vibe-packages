@@ -13,6 +13,30 @@ def run_command(command, cwd=None):
         return False, result.stderr
     return True, result.stdout
 
+def ensure_gpg_key():
+    success, output = run_command(f"gpg --list-secret-keys '{GPG_KEY_NAME}'")
+    if not success or GPG_KEY_NAME not in output:
+        print(f"GPG secret key '{GPG_KEY_NAME}' not found. Generating a new key...")
+        batch_script = f"""%no-protection
+Key-Type: RSA
+Key-Length: 4096
+Name-Real: {GPG_KEY_NAME}
+Expire-Date: 0
+%commit
+"""
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", delete=False) as tf:
+            tf.write(batch_script)
+            temp_name = tf.name
+
+        gen_success, gen_out = run_command(f"gpg --batch --generate-key {temp_name}")
+        os.remove(temp_name)
+        if not gen_success:
+            print("Failed to generate GPG key.")
+            return False
+        print(f"GPG key '{GPG_KEY_NAME}' generated successfully.")
+    return True
+
 def build_package(source_dir, output_dir="pool/main"):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -21,6 +45,7 @@ def build_package(source_dir, output_dir="pool/main"):
 
 def update_repo(dist):
     print(f"Updating repository for distribution: {dist}")
+    ensure_gpg_key()
     dist_dir = f"dists/{dist}"
 
     for arch in ARCHS:
@@ -86,13 +111,16 @@ def generate_index_html(path, title):
         if f == "index.html": continue
         links.append(f'<li><a href="{f}">{f}</a></li>')
 
+    # If path is direct child of dists/ (e.g. dists/stable), parent link is ../../ to reach root
+    parent_link = "../../" if os.path.dirname(os.path.normpath(path)) == "dists" else "../"
+
     html = f"""<!DOCTYPE html>
 <html>
 <head><title>Index of {title}</title></head>
 <body>
 <h1>Index of {title}</h1>
 <ul>
-    <li><a href="../">../</a></li>
+    <li><a href="{parent_link}">../</a></li>
     {" ".join(links)}
 </ul>
 </body>
