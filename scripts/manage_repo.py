@@ -13,6 +13,19 @@ def run_command(command, cwd=None):
         return False, result.stderr
     return True, result.stdout
 
+def export_public_key(target_path="public.key"):
+    success, new_key = run_command(f"gpg --armor --export '{GPG_KEY_NAME}'")
+    if not success:
+        return False
+    if os.path.exists(target_path):
+        with open(target_path, "r") as f:
+            current_key = f.read()
+        if current_key == new_key:
+            return True
+    with open(target_path, "w") as f:
+        f.write(new_key)
+    return True
+
 def ensure_gpg_key():
     success, output = run_command(f"gpg --list-secret-keys '{GPG_KEY_NAME}'")
     if not success or GPG_KEY_NAME not in output:
@@ -95,8 +108,8 @@ Description: Vibe Packages {dist.capitalize()} Repository (AI Managed)
     run_command(f"gpg --batch --yes --clearsign --local-user '{GPG_KEY_NAME}' --output {dist_dir}/InRelease {dist_dir}/Release")
     run_command(f"gpg --batch --yes --detach-sign --armor --local-user '{GPG_KEY_NAME}' --output {dist_dir}/Release.gpg {dist_dir}/Release")
 
-    # Export public key to public.key at repo root to ensure public key is always in sync
-    run_command(f"gpg --armor --export '{GPG_KEY_NAME}' > public.key")
+    # Export public key to public.key at repo root if changed
+    export_public_key("public.key")
 
     # Generate index.html for browsable directory
     generate_index_html(dist_dir, dist)
