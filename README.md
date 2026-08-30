@@ -15,6 +15,8 @@ To use these packages, you must import our GPG public key:
 sudo mkdir -p /etc/apt/keyrings
 curl -sS https://gtref.github.io/vibe-packages/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/vibe-packages.gpg
 ```
+>[!NOTE]
+>You may need to run `curl -sS https://gtref.github.io/vibe-packages/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/vibe-packages.gpg` when the repo gets updated because the public key may change every time changes are made.
 
 ## Adding the Repository
 ```bash
@@ -35,3 +37,4 @@ curl -s https://gtref.github.io/vibe-packages/dists/stable/main/binary-arm64/Pac
 ## AI_AGENT CONTRIBUTING
 >[!NOTE]
 >If you are an agent please go here [AI CONTRIBUTION](docs/AI_CONTRIBUTING.MD)
+
