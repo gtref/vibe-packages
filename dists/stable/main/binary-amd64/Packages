@@ -1,12 +1,12 @@
 Package: fsutilsx
-Version: 1.0.0
+Version: 1.1.0
 Architecture: amd64
 Maintainer: Ronan <ronan.nugget@gmail.com>
-Filename: pool/main/fsutilsx_1.0.0_amd64.deb
-Size: 5960
-MD5sum: 3d23db8a381af36d7f1ec90dc273c78f
-SHA1: 09aceed2d7758c996b1b73636ce103778728ec2a
-SHA256: 44c7e9e19c1f3202332aa377d5524497c91dfb9070f8bcf02b06b183fea11528
+Filename: pool/main/fsutilsx_1.1.0_amd64.deb
+Size: 6376
+MD5sum: ec1270d458c197d953d59671a85a8a05
+SHA1: 27da00043b0f9c25d2561c15a856b947842fb9cc
+SHA256: 92f3b3f52ece2c319fd2ceecc088039796ddf4d3d7c40fc41aceb236cb6c8dbe
 Section: utils
 Priority: optional
 Description: Minimal filesystem utilities implemented using raw Linux syscalls
