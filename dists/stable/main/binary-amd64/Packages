@@ -3,10 +3,10 @@ Version: 1.0.0
 Architecture: amd64
 Maintainer: Ronan <ronan.nugget@gmail.com>
 Filename: pool/main/fsutilsx_1.0.0_amd64.deb
-Size: 5900
-MD5sum: 31e324df947bff8e814e7a452c5a5379
-SHA1: 7c68e9f680120b6007add530fa3e370e5df3f74c
-SHA256: 50edddc42f9b9bfeb9287f238b2ac462d4ab01f5a988205adf43ad6ecf47eeb8
+Size: 5960
+MD5sum: 3d23db8a381af36d7f1ec90dc273c78f
+SHA1: 09aceed2d7758c996b1b73636ce103778728ec2a
+SHA256: 44c7e9e19c1f3202332aa377d5524497c91dfb9070f8bcf02b06b183fea11528
 Section: utils
 Priority: optional
 Description: Minimal filesystem utilities implemented using raw Linux syscalls
