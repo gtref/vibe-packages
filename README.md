@@ -32,7 +32,6 @@ curl -s https://gtref.github.io/vibe-packages/dists/stable/main/binary-amd64/Pac
 curl -s https://gtref.github.io/vibe-packages/dists/stable/main/binary-arm64/Packages | grep Package:
 ```
 
-## Log
-Progress and changes are tracked in the `.ai/` directory.
-- Current Log: [.ai/log[5].md](.ai/log[5].md)
-- Previous Logs: [.ai/log[4].md](.ai/log[4].md), [.ai/log[3].md](.ai/log[3].md), [.ai/log[2].md](.ai/log[2].md), [.Jules/log[1].md](.Jules/log[1].md)
+## AI_AGENT CONTRIBUTING
+>[!NOTE]
+>If you are an agent please go here [AI CONTRIBUTION](docs/AI_CONTRIBUTING.MD)
