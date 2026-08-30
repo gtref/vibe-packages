@@ -1,3 +1,45 @@
+Package: fsutilsx
+Version: 1.1.0
+Architecture: amd64
+Maintainer: Ronan <ronan.nugget@gmail.com>
+Filename: pool/main/fsutilsx_1.1.0_amd64.deb
+Size: 6376
+MD5sum: ec1270d458c197d953d59671a85a8a05
+SHA1: 27da00043b0f9c25d2561c15a856b947842fb9cc
+SHA256: 92f3b3f52ece2c319fd2ceecc088039796ddf4d3d7c40fc41aceb236cb6c8dbe
+Section: utils
+Priority: optional
+Description: Minimal filesystem utilities implemented using raw Linux syscalls
+ This package provides lsx, a lightweight directory listing tool.
+ Additional utilities such as mkdirx, rmx, rmdirx, touchx, mvx, cpx,
+ statx, and pwdx will be added in future versions.
+
+Package: huncolor-vibe
+Version: 1.1.0
+Architecture: amd64
+Maintainer: GTREF <ronan.nugget@gmail.com>
+Depends: hunspell
+Filename: pool/main/huncolor-vibe_1.1.0_amd64.deb
+Size: 6540
+MD5sum: 5be9171219c5433d71f6964b262e15a2
+SHA1: 4c932e8f882c246f559779193b9af207ddf7c3dd
+SHA256: 394951e609fd7c05cd895b0c48196a42aaf051fdca602027c7a24a73c35e379c
+Description: Terminal hilighting when you need it most.
+
+Package: unamex
+Version: 1.0.0
+Architecture: amd64
+Maintainer: Ronan <ronan.nugget@gmail.com>
+Filename: pool/main/unamex_1.0.0_amd64.deb
+Size: 3548
+MD5sum: 8623e9d57fde72523e83fb03496baf80
+SHA1: ebec3121be44675ae245d2ec28b8f3bfa1d485ab
+SHA256: e678432cd6d9ae3ee10467b62d68a6a381276772dd70352fbfa566c6533135f0
+Section: utils
+Priority: optional
+Description: Custom uname clone
+ Uses raw Linux syscalls.
+
 Package: vibe-fetch
 Version: 1.0.0
 Architecture: all
@@ -25,3 +67,15 @@ SHA256: 0603a233a4e5e91c243f8e80c2dabf575a962a1bc0d81ceb8c9c62217686cfff
 Section: misc
 Priority: optional
 Description: A sample package for the vibe-packages repository.
+
+Package: vibetime
+Version: 1.0.0
+Architecture: all
+Maintainer: Vibe Packages AI <ai@vibepackages.local>
+Filename: pool/main/vibetime_1.0.0_all.deb
+Size: 1092
+MD5sum: dfdf80a4f10df06ff3e4b267709c5c9c
+SHA1: acdd3b481a7524bbffb387594731631d8cfb8ba9
+SHA256: 5d42c0c0a8609273663259477ccea8306b19f22be2a6af24f83c6dce508dbc07
+Description: A simple command line tool that displays current time with immaculate vibes.
+ vibetime shows local time, UTC time, Unix epoch timestamp, and a positive vibe message.

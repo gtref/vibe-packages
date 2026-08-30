@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# vibetime - Current time display with immaculate vibes
+
+set -e
+
+LOCAL_TIME=$(date "+%Y-%m-%d %H:%M:%S %Z")
+UTC_TIME=$(date -u "+%Y-%m-%d %H:%M:%S UTC")
+UNIX_TIME=$(date +%s)
+
+VIBES=(
+  "✨ Keep shining bright!"
+  "🚀 Anything is possible today!"
+  "🌊 Go with the flow and keep building!"
+  "⚡ High energy, high impact!"
+  "🌈 Every second is a fresh start!"
+  "🌟 Excellence in motion!"
+)
+
+# Pick pseudo-random vibe based on timestamp
+VIBE_INDEX=$((UNIX_TIME % ${#VIBES[@]}))
+SELECTED_VIBE="${VIBES[$VIBE_INDEX]}"
+
+echo "========================================"
+echo "          ⏰ VIBE TIME ⏰              "
+echo "========================================"
+echo " Local: $LOCAL_TIME"
+echo " UTC:   $UTC_TIME"
+echo " Epoch: $UNIX_TIME"
+echo "----------------------------------------"
+echo " Vibe:  $SELECTED_VIBE"
+echo "========================================"

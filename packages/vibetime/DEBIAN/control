@@ -1,0 +1,6 @@
+Package: vibetime
+Version: 1.0.0
+Architecture: all
+Maintainer: Vibe Packages AI <ai@vibepackages.local>
+Description: A simple command line tool that displays current time with immaculate vibes.
+ vibetime shows local time, UTC time, Unix epoch timestamp, and a positive vibe message.
