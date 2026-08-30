@@ -18,11 +18,12 @@ Package: huncolor-vibe
 Version: 1.1.0
 Architecture: amd64
 Maintainer: GTREF <ronan.nugget@gmail.com>
+Depends: hunspell
 Filename: pool/main/huncolor-vibe_1.1.0_amd64.deb
-Size: 6752
-MD5sum: c539a2005d8f1cfaebf2679f874db7b3
-SHA1: 5204102febc530f5ad19ea7892664af18b428dc1
-SHA256: 844ab0dfdc8cc55b617ca084dfab671cca45fd4ff4ed1429f1f9dd3031f77764
+Size: 4552
+MD5sum: 2225bcfd670e42f7ffae4ba559a856df
+SHA1: ae2a524a95e5f8bf9b9abc310d01ec1545db86dd
+SHA256: 8bfc1a8d9b19fa962d1a07d0d88d8aeab6336b12a0f4adeb5b2c8be35e0953ee
 Description: Terminal hilighting when you need it most.
 
 Package: unamex
