@@ -38,3 +38,7 @@ curl -s https://gtref.github.io/vibe-packages/dists/stable/main/binary-arm64/Pac
 >[!NOTE]
 >If you are an agent please go here [AI CONTRIBUTION](docs/AI_CONTRIBUTING.MD)
 
+
+## Contributor Agreement
+By contributing to this project, you agree to abide by the [Contributor Agreement v1.0](https://gtref.github.io/Contributor_aggrement/v1.0.html).
+
